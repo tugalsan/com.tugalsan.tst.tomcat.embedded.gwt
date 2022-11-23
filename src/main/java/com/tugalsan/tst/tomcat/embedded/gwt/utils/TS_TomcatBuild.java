@@ -83,7 +83,7 @@ public class TS_TomcatBuild {
     public static void startAndLock(TS_TomcatBall tomcatBall, TS_TomcatConnector... connectors) {
         TGS_UnSafe.execute(() -> {
             tomcatBall.connectors().addAll(List.of(connectors));
-            ServletByAnnotation.tomcatBall = tomcatBall;
+            ServletDestroy.tomcatBall = tomcatBall;
             tomcatBall.tomcat().start();
             Arrays.asList(connectors)
                     .forEach(c -> tomcatBall.tomcat().getService().addConnector(c.connector));

@@ -9,11 +9,12 @@ import javax.servlet.http.*;
 import com.tugalsan.api.unsafe.client.*;
 import java.time.Duration;
 
+//ServletByAnnotation
 @WebServlet(
         name = "ServletByAnnotation",//JUST A UNQUE TAG
         urlPatterns = {"/ServletByAnnotation"}
 )
-public class ServletByAnnotation extends HttpServlet {
+public class ServletDestroy extends HttpServlet {
 
     public static TS_TomcatBall tomcatBall;
 
