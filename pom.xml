@@ -13,29 +13,6 @@
     
     <dependencies>
         <dependency>
-            <groupId>org.gwtproject</groupId>
-            <artifactId>gwt-user</artifactId><!--gwt-user ver2022.07.05 -->
-            <exclusions>
-                <exclusion>
-                    <groupId>com.google.jsinterop</groupId>
-                    <artifactId>jsinterop-annotations</artifactId>
-                </exclusion>
-                <exclusion>
-                    <groupId>javax.validation</groupId>
-                    <artifactId>validation-api</artifactId>
-                </exclusion>                
-                <exclusion>
-                    <groupId>javax.servlet</groupId>
-                    <artifactId>javax.servlet-api</artifactId>
-                </exclusion>                
-                <exclusion>
-                    <groupId>org.w3c.css</groupId>
-                    <artifactId>sac</artifactId>
-                </exclusion>   
-            </exclusions>
-            <version>2.10.0</version>
-        </dependency>
-        <dependency>
             <groupId>javax.servlet</groupId>
             <artifactId>javax.servlet-api</artifactId>
             <version>4.0.1</version>
@@ -44,27 +21,27 @@
         <dependency>
             <groupId>org.apache.tomcat.embed</groupId>
             <artifactId>tomcat-embed-core</artifactId>
-            <version>8.5.83</version>
+            <version>9.0.69</version>
         </dependency>
         <dependency>
             <groupId>org.apache.tomcat.embed</groupId>
             <artifactId>tomcat-embed-jasper</artifactId>
-            <version>8.5.83</version>
+            <version>9.0.69</version>
         </dependency>
         <dependency>
             <groupId>org.apache.tomcat</groupId>
             <artifactId>tomcat-jasper</artifactId>
-            <version>8.5.83</version>
+            <version>9.0.69</version>
         </dependency>
         <dependency>
             <groupId>org.apache.tomcat</groupId>
             <artifactId>tomcat-jasper-el</artifactId>
-            <version>8.5.83</version>
+            <version>9.0.69</version>
         </dependency>
         <dependency>
             <groupId>org.apache.tomcat</groupId>
             <artifactId>tomcat-jsp-api</artifactId>
-            <version>8.5.83</version>
+            <version>9.0.69</version>
         </dependency>
         <dependency>
             <groupId>${project.groupId}</groupId>
@@ -89,7 +66,7 @@
                     <programs>
                         <program>
                             <mainClass>com.tugalsan.tst.tomcat.embedded.gwt.Main</mainClass>
-                            <id>webapp</id><!--<name>webapp</name>-->
+                            <id>webapp</id>
                         </program>
                     </programs>
                 </configuration>

@@ -28,7 +28,9 @@ public class TS_TomcatBuild {
                 project_src_main_webapp.toString()
         );
         //Set execution independent of current thread context classloader (compatibility with exec:java mojo)
-        context.setParentClassLoader(mainClass.getClassLoader());
+        if (mainClass != null) {
+            context.setParentClassLoader(mainClass.getClassLoader());
+        }
         // Declare an alternative location for your "WEB-INF/classes" dir so Servlet 3.0 annotation will work
         var resources = new StandardRoot(context);
         resources.addPreResources(new DirResourceSet(
