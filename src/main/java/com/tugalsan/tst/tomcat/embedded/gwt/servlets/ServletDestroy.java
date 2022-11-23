@@ -23,7 +23,6 @@ public class ServletDestroy extends HttpServlet {
         if (tomcatBall != null) {
             tomcatBall.destroy(waitSeconds, waitSeconds);
         }
-        TS_ThreadWait.of(Duration.ofSeconds(waitSeconds));//TEST FOR SEQUENCIAL WAY
         System.exit(0);
     }
 }

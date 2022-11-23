@@ -1,11 +1,13 @@
 package com.tugalsan.tst.tomcat.embedded.gwt.utils;
 
+import com.tugalsan.api.thread.server.TS_ThreadWait;
 import java.util.*;
 import java.nio.file.*;
 import org.apache.catalina.*;
 import org.apache.catalina.startup.*;
 import com.tugalsan.api.unsafe.client.*;
 import com.tugalsan.tst.tomcat.embedded.gwt.servlets.*;
+import java.time.Duration;
 
 public record TS_TomcatBall(
         Path project,
@@ -21,7 +23,9 @@ public record TS_TomcatBall(
     public void destroy(int maxSecondsForConnectors, int maxSecondsForTomcat) {
         {//SEQUENCIAL WAY
             connectors().forEach(connector -> connector.destroy());
+            TS_ThreadWait.of(Duration.ofSeconds(maxSecondsForConnectors));//TEST FOR SEQUENCIAL WAY
             TGS_UnSafe.execute(() -> context().destroy());
+            TS_ThreadWait.of(Duration.ofSeconds(maxSecondsForTomcat));//TEST FOR SEQUENCIAL WAY
         }
 //        {//DESTROR ALL CONNECTORS
 //            List<Callable<Boolean>> destroyConnectors = new ArrayList();
