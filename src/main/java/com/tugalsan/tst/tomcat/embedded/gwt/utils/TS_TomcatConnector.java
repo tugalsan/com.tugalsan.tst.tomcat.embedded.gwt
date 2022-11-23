@@ -3,7 +3,6 @@ package com.tugalsan.tst.tomcat.embedded.gwt.utils;
 import java.util.*;
 import java.nio.file.*;
 import org.apache.catalina.connector.*;
-import com.tugalsan.api.stream.client.*;
 import com.tugalsan.api.unsafe.client.*;
 
 public class TS_TomcatConnector {
@@ -61,6 +60,6 @@ public class TS_TomcatConnector {
     public void destroy() {
         TGS_UnSafe.execute(() -> {
             connector.destroy();
-        }, e -> TGS_StreamUtils.doNothing());
+        });
     }
 }

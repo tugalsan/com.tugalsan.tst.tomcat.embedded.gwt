@@ -4,7 +4,6 @@ import java.util.*;
 import java.nio.file.*;
 import org.apache.catalina.*;
 import org.apache.catalina.startup.*;
-import com.tugalsan.api.stream.client.*;
 import com.tugalsan.api.unsafe.client.*;
 import com.tugalsan.tst.tomcat.embedded.gwt.servlets.*;
 
@@ -19,9 +18,42 @@ public record TS_TomcatBall(
         List<TS_ServletAbstract> servlets,
         List<TS_TomcatConnector> connectors) {
 
-    public void destroy() {
-        connectors().forEach(connector -> connector.destroy());
-        TGS_UnSafe.execute(() -> context().destroy(), e -> TGS_StreamUtils.doNothing());
+    public void destroy(int maxSecondsForConnectors, int maxSecondsForTomcat) {
+        {//SEQUENCIAL WAY
+            connectors().forEach(connector -> connector.destroy());
+            TGS_UnSafe.execute(() -> context().destroy());
+        }
+//        {//DESTROR ALL CONNECTORS
+//            List<Callable<Boolean>> destroyConnectors = new ArrayList();
+//            connectors.forEach(connector -> destroyConnectors.add(() -> {
+//                connector.destroy();
+//                return true;
+//            }));
+//            var all = TS_ThreadRunAll.of(Duration.ofSeconds(maxSecondsForConnectors), destroyConnectors);
+//            if (all.hasError()) {
+//                System.out.println("ERROR ON DESTROY CONNECTORS:");
+//                all.exceptions.forEach(e -> {
+//                    e.printStackTrace();
+//                });
+//            } else {
+//                System.out.println("CONNECTORS DESTROYED SUCCESSFULLY");
+//            }
+//        }
+//        {//DESTROY TOMCAT
+//            Callable<Boolean> destroyTomcat = () -> {
+//                context().destroy();
+//                return true;
+//            };
+//            var all = TS_ThreadRunAll.of(Duration.ofSeconds(maxSecondsForTomcat), destroyTomcat);
+//            if (all.hasError()) {
+//                System.out.println("ERROR ON DESTROY TOMCAT:");
+//                all.exceptions.forEach(e -> {
+//                    e.printStackTrace();
+//                });
+//            } else {
+//                System.out.println("CONNECTORS TOMCAT SUCCESSFULLY");
+//            }
+//        }
     }
 
 }
