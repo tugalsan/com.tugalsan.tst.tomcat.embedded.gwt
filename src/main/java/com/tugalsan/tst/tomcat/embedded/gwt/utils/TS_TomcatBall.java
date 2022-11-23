@@ -7,7 +7,6 @@ import org.apache.catalina.startup.*;
 import com.tugalsan.api.stream.client.*;
 import com.tugalsan.api.unsafe.client.*;
 import com.tugalsan.tst.tomcat.embedded.gwt.servlets.*;
-import com.tugalsan.tst.tomcat.embedded.gwt.utils.TS_TomcatConnector;
 
 public record TS_TomcatBall(
         Path project,
