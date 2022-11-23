@@ -11,8 +11,8 @@ import java.time.Duration;
 
 //ServletByAnnotation
 @WebServlet(
-        name = "ServletByAnnotation",//JUST A UNQUE TAG
-        urlPatterns = {"/ServletByAnnotation"}
+        name = "ServletDestroy",//JUST A UNQUE TAG
+        urlPatterns = {"/ServletDestroy"}
 )
 public class ServletDestroy extends HttpServlet {
 
