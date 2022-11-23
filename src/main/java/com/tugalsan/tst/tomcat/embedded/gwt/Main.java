@@ -1,6 +1,6 @@
 package com.tugalsan.tst.tomcat.embedded.gwt;
 
-import com.tugalsan.tst.tomcat.embedded.gwt.servlets.*;
+import com.tugalsan.tst.tomcat.embedded.gwt.servlets.ServletByMapping;
 import com.tugalsan.tst.tomcat.embedded.gwt.utils.*;
 
 public class Main {
@@ -8,8 +8,7 @@ public class Main {
     //HOW TO EXECUTE
     //C:\me\codes\com.tugalsan\tst\com.tugalsan.tst.tomcat.embedded.gwt>target\bin\webapp.bat
     public static void main(String[] args) {
-        var tomcatBall = TS_Tomcat.of(
-                  null/*Main.class*/,
+        var tomcatBall = TS_Tomcat.of(null/*Main.class*/,
                 "",
                 servlets -> {
                     servlets.add(new ServletByMapping());
@@ -18,6 +17,6 @@ public class Main {
 //                    connectors.add(TS_TomcatConnector.ofUnSecure(8086));
                 }
         );
-        System.out.println(tomcatBall);
+        System.out.println("SAFE EXIT: " + tomcatBall);
     }
 }

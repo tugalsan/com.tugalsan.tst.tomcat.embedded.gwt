@@ -1,5 +1,6 @@
 package com.tugalsan.tst.tomcat.embedded.gwt;
 
+import com.tugalsan.tst.tomcat.embedded.gwt.utils.TS_TomcatBall;
 import java.util.*;
 import com.tugalsan.api.executable.client.*;
 import com.tugalsan.api.list.client.*;
@@ -15,9 +16,9 @@ public class TS_Tomcat {
     }
     public final TS_TomcatBall tomcatBall;
 
-    public static TS_Tomcat of(Class mainClass, CharSequence contextName_as_empty_or_slashName, TGS_ExecutableType1<List<ServletAbstract>> servlets, TGS_ExecutableType1<List<TS_TomcatConnector>> connectors) {
+    public static TS_Tomcat of(Class mainClass, CharSequence contextName_as_empty_or_slashName, TGS_ExecutableType1<List<TS_ServletAbstract>> servlets, TGS_ExecutableType1<List<TS_TomcatConnector>> connectors) {
         var tomcat = new TS_Tomcat(TS_TomcatBuild.init(mainClass, contextName_as_empty_or_slashName));
-        List<ServletAbstract> servletList = TGS_ListUtils.of();
+        List<TS_ServletAbstract> servletList = TGS_ListUtils.of();
         List<TS_TomcatConnector> connectorList = TGS_ListUtils.of();
         servlets.execute(servletList);
         connectors.execute(connectorList);

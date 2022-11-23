@@ -4,7 +4,7 @@ import java.io.*;
 import javax.servlet.*;
 import javax.servlet.http.*;
 
-public class ServletByMapping extends ServletAbstract {
+public class ServletByMapping extends TS_ServletAbstract {
 
     @Override
     public String name() {

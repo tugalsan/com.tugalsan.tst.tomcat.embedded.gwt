@@ -57,11 +57,11 @@ public class TS_TomcatBuild {
         );
     }
 
-    public static void map(TS_TomcatBall tomcatBall, List<ServletAbstract> servlets) {
-        map(tomcatBall, servlets.toArray(ServletAbstract[]::new));
+    public static void map(TS_TomcatBall tomcatBall, List<TS_ServletAbstract> servlets) {
+        map(tomcatBall, servlets.toArray(TS_ServletAbstract[]::new));
     }
 
-    public static void map(TS_TomcatBall tomcatBall, ServletAbstract... servlets) {
+    public static void map(TS_TomcatBall tomcatBall, TS_ServletAbstract... servlets) {
         tomcatBall.servlets().addAll(List.of(servlets));
         Arrays.asList(servlets).forEach(servlet -> {
             tomcatBall.tomcat().addServlet(
@@ -83,7 +83,7 @@ public class TS_TomcatBuild {
     public static void startAndLock(TS_TomcatBall tomcatBall, TS_TomcatConnector... connectors) {
         TGS_UnSafe.execute(() -> {
             tomcatBall.connectors().addAll(List.of(connectors));
-            ServletDestroy.tomcatBall = tomcatBall;
+            ServletByAnnotation.tomcatBall = tomcatBall;
             tomcatBall.tomcat().start();
             Arrays.asList(connectors)
                     .forEach(c -> tomcatBall.tomcat().getService().addConnector(c.connector));

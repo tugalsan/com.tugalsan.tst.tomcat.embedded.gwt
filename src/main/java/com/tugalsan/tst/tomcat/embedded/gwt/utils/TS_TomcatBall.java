@@ -7,6 +7,7 @@ import org.apache.catalina.startup.*;
 import com.tugalsan.api.stream.client.*;
 import com.tugalsan.api.unsafe.client.*;
 import com.tugalsan.tst.tomcat.embedded.gwt.servlets.*;
+import com.tugalsan.tst.tomcat.embedded.gwt.utils.TS_TomcatConnector;
 
 public record TS_TomcatBall(
         Path project,
@@ -16,7 +17,7 @@ public record TS_TomcatBall(
         Context context,
         CharSequence contextName_as_empty_or_slashName,
         WebResourceRoot resources,
-        List<ServletAbstract> servlets,
+        List<TS_ServletAbstract> servlets,
         List<TS_TomcatConnector> connectors) {
 
     public void destroy() {

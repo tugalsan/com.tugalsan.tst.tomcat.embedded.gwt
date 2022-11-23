@@ -1,5 +1,5 @@
+com\tugalsan\tst\tomcat\embedded\gwt\servlets\TS_ServletAbstract.class
 com\tugalsan\tst\tomcat\embedded\gwt\utils\TS_TomcatConnector.class
-com\tugalsan\tst\tomcat\embedded\gwt\servlets\ServletDestroy.class
 com\tugalsan\tst\tomcat\embedded\gwt\utils\TS_TomcatBuild.class
 com\tugalsan\tst\tomcat\embedded\gwt\TS_Tomcat.class
 com\tugalsan\tst\tomcat\embedded\gwt\Main.class
@@ -8,4 +8,3 @@ com\tugalsan\tst\tomcat\embedded\gwt\servlets\ServletByAnnotation.class
 com\tugalsan\tst\tomcat\embedded\gwt\utils\TS_TomcatBall.class
 com\tugalsan\tst\tomcat\embedded\gwt\utils\TS_TomcatListener.class
 com\tugalsan\tst\tomcat\embedded\gwt\utils\TS_TomcatPath.class
-com\tugalsan\tst\tomcat\embedded\gwt\servlets\ServletAbstract.class
