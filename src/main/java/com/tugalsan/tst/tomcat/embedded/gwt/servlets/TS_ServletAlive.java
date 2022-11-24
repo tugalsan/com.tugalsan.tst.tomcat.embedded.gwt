@@ -15,5 +15,6 @@ public class TS_ServletAlive extends TS_ServletAbstract {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         resp.getWriter().println(TS_ServletAlive.class.getName());
+        resp.flushBuffer();
     }
 }

@@ -8,7 +8,7 @@ import org.apache.catalina.core.*;
 import org.apache.catalina.startup.*;
 import org.apache.catalina.webresources.*;
 import com.tugalsan.api.unsafe.client.*;
-import com.tugalsan.tst.tomcat.embedded.gwt.servlets.*;
+import com.tugalsan.tst.tomcat.embedded.gwt.servlets.TS_ServletDestroy;
 
 public class TS_TomcatBuild {
 
@@ -51,7 +51,7 @@ public class TS_TomcatBuild {
 //        context.getNamingResources().addResource(resource);
 //        context.getServletContext().addListener(DataBaseSchemaInit.class);
         }
-        return new TS_TomcatBall(
+        return TS_ServletDestroy.tomcatBall = new TS_TomcatBall(
                 project, project_src_main_webapp, project_target_classes,
                 tomcat, context, contextName_as_empty_or_slashName, resources,
                 new ArrayList(), new ArrayList()
@@ -84,7 +84,6 @@ public class TS_TomcatBuild {
     public static void startAndLock(TS_TomcatBall tomcatBall, TS_TomcatConnector... connectors) {
         TGS_UnSafe.execute(() -> {
             tomcatBall.connectors().addAll(List.of(connectors));
-            TS_ServletDestroy.tomcatBall = tomcatBall;
             tomcatBall.tomcat().start();
             Arrays.asList(connectors)
                     .forEach(c -> tomcatBall.tomcat().getService().addConnector(c.connector));
