@@ -1,5 +1,8 @@
 package com.tugalsan.tst.tomcat.embedded.gwt.utils;
 
+import com.tugalsan.tst.tomcat.embedded.gwt.TS_ServletAbstract;
+import com.tugalsan.tst.tomcat.embedded.gwt.TS_TomcatConnector;
+import com.tugalsan.tst.tomcat.embedded.gwt.TS_TomcatBall;
 import java.util.*;
 import org.apache.catalina.core.*;
 import org.apache.catalina.startup.*;
@@ -9,7 +12,7 @@ import com.tugalsan.tst.tomcat.embedded.gwt.servlets.*;
 
 public class TS_TomcatBuild {
 
-    public static TS_TomcatBall init(Class mainClass, CharSequence contextName_as_empty_or_slashName) {
+    public static TS_TomcatBall init(CharSequence contextName_as_empty_or_slashName) {
         //ref folders
         var project = TS_TomcatPath.project();
         var project_src_main_webapp = TS_TomcatPath.project_src_main_webapp();
@@ -28,9 +31,7 @@ public class TS_TomcatBuild {
                 project_src_main_webapp.toString()
         );
         //Set execution independent of current thread context classloader (compatibility with exec:java mojo)
-        if (mainClass != null) {
-            context.setParentClassLoader(mainClass.getClassLoader());
-        }
+        context.setParentClassLoader(Thread.currentThread().getContextClassLoader());
         // Declare an alternative location for your "WEB-INF/classes" dir so Servlet 3.0 annotation will work
         var resources = new StandardRoot(context);
         resources.addPreResources(new DirResourceSet(
@@ -83,7 +84,7 @@ public class TS_TomcatBuild {
     public static void startAndLock(TS_TomcatBall tomcatBall, TS_TomcatConnector... connectors) {
         TGS_UnSafe.execute(() -> {
             tomcatBall.connectors().addAll(List.of(connectors));
-            ServletDestroy.tomcatBall = tomcatBall;
+            TS_ServletDestroy.tomcatBall = tomcatBall;
             tomcatBall.tomcat().start();
             Arrays.asList(connectors)
                     .forEach(c -> tomcatBall.tomcat().getService().addConnector(c.connector));

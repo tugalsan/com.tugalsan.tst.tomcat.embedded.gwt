@@ -1,10 +1,9 @@
-C:\me\codes\com.tugalsan\tst\com.tugalsan.tst.tomcat.embedded.gwt\src\main\java\com\tugalsan\tst\tomcat\embedded\gwt\utils\TS_TomcatBall.java
-C:\me\codes\com.tugalsan\tst\com.tugalsan.tst.tomcat.embedded.gwt\src\main\java\com\tugalsan\tst\tomcat\embedded\gwt\servlets\TS_ServletAbstract.java
-C:\me\codes\com.tugalsan\tst\com.tugalsan.tst.tomcat.embedded.gwt\src\main\java\com\tugalsan\tst\tomcat\embedded\gwt\servlets\ServletByMapping.java
+C:\me\codes\com.tugalsan\tst\com.tugalsan.tst.tomcat.embedded.gwt\src\main\java\com\tugalsan\tst\tomcat\embedded\gwt\servlets\TS_ServletAlive.java
+C:\me\codes\com.tugalsan\tst\com.tugalsan.tst.tomcat.embedded.gwt\src\main\java\com\tugalsan\tst\tomcat\embedded\gwt\servlets\TS_ServletDestroy.java
+C:\me\codes\com.tugalsan\tst\com.tugalsan.tst.tomcat.embedded.gwt\src\main\java\com\tugalsan\tst\tomcat\embedded\gwt\TS_TomcatConnector.java
 C:\me\codes\com.tugalsan\tst\com.tugalsan.tst.tomcat.embedded.gwt\src\main\java\com\tugalsan\tst\tomcat\embedded\gwt\utils\TS_TomcatBuild.java
 C:\me\codes\com.tugalsan\tst\com.tugalsan.tst.tomcat.embedded.gwt\src\main\java\com\tugalsan\tst\tomcat\embedded\gwt\utils\TS_TomcatPath.java
-C:\me\codes\com.tugalsan\tst\com.tugalsan.tst.tomcat.embedded.gwt\src\main\java\com\tugalsan\tst\tomcat\embedded\gwt\servlets\ServletDestroy.java
 C:\me\codes\com.tugalsan\tst\com.tugalsan.tst.tomcat.embedded.gwt\src\main\java\com\tugalsan\tst\tomcat\embedded\gwt\utils\TS_TomcatListener.java
-C:\me\codes\com.tugalsan\tst\com.tugalsan.tst.tomcat.embedded.gwt\src\main\java\com\tugalsan\tst\tomcat\embedded\gwt\TS_Tomcat.java
+C:\me\codes\com.tugalsan\tst\com.tugalsan.tst.tomcat.embedded.gwt\src\main\java\com\tugalsan\tst\tomcat\embedded\gwt\TS_ServletAbstract.java
+C:\me\codes\com.tugalsan\tst\com.tugalsan.tst.tomcat.embedded.gwt\src\main\java\com\tugalsan\tst\tomcat\embedded\gwt\TS_TomcatBall.java
 C:\me\codes\com.tugalsan\tst\com.tugalsan.tst.tomcat.embedded.gwt\src\main\java\com\tugalsan\tst\tomcat\embedded\gwt\Main.java
-C:\me\codes\com.tugalsan\tst\com.tugalsan.tst.tomcat.embedded.gwt\src\main\java\com\tugalsan\tst\tomcat\embedded\gwt\utils\TS_TomcatConnector.java

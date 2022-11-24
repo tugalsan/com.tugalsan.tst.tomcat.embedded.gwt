@@ -1,19 +1,17 @@
 package com.tugalsan.tst.tomcat.embedded.gwt.servlets;
 
-import com.tugalsan.api.thread.server.TS_ThreadWait;
-import com.tugalsan.tst.tomcat.embedded.gwt.utils.TS_TomcatBall;
+import com.tugalsan.tst.tomcat.embedded.gwt.TS_TomcatBall;
 import java.io.*;
 import javax.servlet.*;
 import javax.servlet.annotation.*;
 import javax.servlet.http.*;
-import java.time.Duration;
 
 //ServletByAnnotation
 @WebServlet(
-        name = "ServletDestroy",//JUST A UNQUE TAG
-        urlPatterns = {"/ServletDestroy"}
+        name = "TS_ServletDestroy",//JUST A UNQUE TAG
+        urlPatterns = {"/TS_ServletDestroy"}
 )
-public class ServletDestroy extends HttpServlet {
+public class TS_ServletDestroy extends HttpServlet {
 
     public static TS_TomcatBall tomcatBall;
 

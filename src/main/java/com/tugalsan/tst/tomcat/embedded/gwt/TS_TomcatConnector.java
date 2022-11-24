@@ -1,11 +1,14 @@
-package com.tugalsan.tst.tomcat.embedded.gwt.utils;
+package com.tugalsan.tst.tomcat.embedded.gwt;
 
+import com.tugalsan.api.log.server.TS_Log;
 import java.util.*;
 import java.nio.file.*;
 import org.apache.catalina.connector.*;
 import com.tugalsan.api.unsafe.client.*;
 
 public class TS_TomcatConnector {
+
+    final private static TS_Log d = TS_Log.of(TS_TomcatConnector.class);
 
     private String type(Path keystorePath) {
         var fn = keystorePath.getFileName().toString().toLowerCase(Locale.ROOT);
@@ -58,8 +61,6 @@ public class TS_TomcatConnector {
     }
 
     public void destroy() {
-        TGS_UnSafe.execute(() -> {
-            connector.destroy();
-        });
+        TGS_UnSafe.execute(() -> connector.destroy(), e -> d.ct("destroy", e));
     }
 }

@@ -1,4 +1,4 @@
-package com.tugalsan.tst.tomcat.embedded.gwt.servlets;
+package com.tugalsan.tst.tomcat.embedded.gwt;
 
 import javax.servlet.http.*;
 
