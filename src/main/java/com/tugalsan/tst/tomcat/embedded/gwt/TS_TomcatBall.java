@@ -79,6 +79,7 @@ public record TS_TomcatBall(
         }
         {//FINNAL SEALING
             TGS_UnSafe.execute(() -> tomcat.stop(), e -> d.ct("tomcat.stop", e));
+            TS_ThreadWait.of(Duration.ofSeconds(maxSecondsForTomcat));//TEST FOR SEQUENCIAL WAY
             TGS_UnSafe.execute(() -> tomcat.destroy(), e -> d.ct("tomcat.destroy", e));
         }
     }
