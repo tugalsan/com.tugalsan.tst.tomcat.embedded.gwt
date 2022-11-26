@@ -1,14 +1,11 @@
 package com.tugalsan.tst.tomcat.embedded.gwt.utils;
 
-import com.tugalsan.tst.tomcat.embedded.gwt.TS_ServletAbstract;
-import com.tugalsan.tst.tomcat.embedded.gwt.TS_TomcatConnector;
-import com.tugalsan.tst.tomcat.embedded.gwt.TS_TomcatBall;
 import java.util.*;
 import org.apache.catalina.core.*;
 import org.apache.catalina.startup.*;
 import org.apache.catalina.webresources.*;
 import com.tugalsan.api.unsafe.client.*;
-import com.tugalsan.tst.tomcat.embedded.gwt.servlets.TS_ServletDestroy;
+import com.tugalsan.tst.tomcat.embedded.gwt.*;
 
 public class TS_TomcatBuild {
 
@@ -51,7 +48,7 @@ public class TS_TomcatBuild {
 //        context.getNamingResources().addResource(resource);
 //        context.getServletContext().addListener(DataBaseSchemaInit.class);
         }
-        return TS_ServletDestroy.tomcatBall = new TS_TomcatBall(
+        return new TS_TomcatBall(
                 project, project_src_main_webapp, project_target_classes,
                 tomcat, context, contextName_as_empty_or_slashName, resources,
                 new ArrayList(), new ArrayList()

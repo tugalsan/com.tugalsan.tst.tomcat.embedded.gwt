@@ -9,8 +9,8 @@ import java.nio.file.*;
 import org.apache.catalina.*;
 import org.apache.catalina.startup.*;
 import com.tugalsan.api.unsafe.client.*;
-import com.tugalsan.tst.tomcat.embedded.gwt.servlets.*;
-import com.tugalsan.tst.tomcat.embedded.gwt.utils.TS_TomcatBuild;
+import com.tugalsan.tst.tomcat.embedded.gwt.servlets.TS_ServletDestroyByMapping;
+import com.tugalsan.tst.tomcat.embedded.gwt.utils.*;
 import java.time.Duration;
 
 public record TS_TomcatBall(
@@ -33,11 +33,12 @@ public record TS_TomcatBall(
         servlets.execute(servletList);
         connectors.execute(connectorList);
         TS_TomcatBuild.map(tomcatBall, servletList);
+        TS_TomcatBuild.map(tomcatBall, new TS_ServletDestroyByMapping(tomcatBall));
         TS_TomcatBuild.startAndLock(tomcatBall, connectorList);
         return tomcatBall;
     }
 
-   public void destroy(int maxSecondsForConnectors, int maxSecondsForTomcat) {
+    public void destroy(int maxSecondsForConnectors, int maxSecondsForTomcat) {
         var sequencial = true;
         if (sequencial) {//SEQUENCIAL WAY
             connectors().forEach(connector -> connector.destroy());
