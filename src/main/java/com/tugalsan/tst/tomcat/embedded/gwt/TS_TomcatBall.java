@@ -38,7 +38,9 @@ public record TS_TomcatBall(
         return tomcatBall;
     }
 
-    public void destroy(int maxSecondsForConnectors, int maxSecondsForTomcat) {
+    public void destroy() {
+        var maxSecondsForConnectors = 5;
+        var maxSecondsForTomcat = 5;
         var sequencial = true;
         if (sequencial) {//SEQUENCIAL WAY
             connectors().forEach(connector -> connector.destroy());
