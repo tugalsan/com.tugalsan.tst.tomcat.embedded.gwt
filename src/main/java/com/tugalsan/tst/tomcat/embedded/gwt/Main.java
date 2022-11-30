@@ -1,7 +1,8 @@
 package com.tugalsan.tst.tomcat.embedded.gwt;
 
-import com.tugalsan.tst.tomcat.embedded.gwt.servlets.TS_ServletAliveByMapping;
-import com.tugalsan.tst.tomcat.embedded.gwt.utils.*;
+import com.tugalsan.api.tomcat.embedded.gwt.server.*;
+import com.tugalsan.api.tomcat.embedded.gwt.server.servlets.*;
+import com.tugalsan.api.tomcat.embedded.gwt.server.utils.*;
 
 public class Main {
 
@@ -13,7 +14,6 @@ public class Main {
                     servlets.add(new TS_ServletAliveByMapping());
                 }, connectors -> {
                     connectors.add(TS_TomcatConnector.ofUnSecure(8085));
-//                    connectors.add(TS_TomcatConnector.ofUnSecure(8086));
                 }
         );
         System.out.println("SAFE EXIT: " + tomcatBall);
