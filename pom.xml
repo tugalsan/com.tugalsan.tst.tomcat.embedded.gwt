@@ -20,8 +20,7 @@
     </dependencies>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <maven.compiler.source>20</maven.compiler.source>
-        <maven.compiler.target>20</maven.compiler.target>
+        <maven.compiler.release>21</maven.compiler.release>
         <exec.mainClass>com.tugalsan.tst.tomcat.embedded.gwt.Main</exec.mainClass>
     </properties>
     <build>
