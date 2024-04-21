@@ -1,5 +1,6 @@
 package com.tugalsan.tst.tomcat.embedded.gwt;
 
+import com.tugalsan.api.thread.server.sync.TS_ThreadSyncTrigger;
 import com.tugalsan.api.tomcat.embedded.gwt.server.*;
 import com.tugalsan.api.tomcat.embedded.gwt.server.servlets.*;
 import com.tugalsan.api.tomcat.embedded.gwt.server.utils.*;
@@ -9,7 +10,9 @@ public class Main {
     //HOW TO EXECUTE
     //C:\me\codes\com.tugalsan\tst\com.tugalsan.tst.tomcat.embedded.gwt>target\bin\webapp.bat
     public static void main(String[] args) {
-        var tomcatBall = TS_TomcatBall.of("",
+        var tomcatBall = TS_TomcatBall.of(
+                TS_ThreadSyncTrigger.of(),
+                "",
                 servlets -> {
                     servlets.add(new TS_ServletAliveByMapping());
                 }, connectors -> {
