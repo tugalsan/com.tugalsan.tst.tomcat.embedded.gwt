@@ -1,0 +1,1 @@
+java -jar target/com.tugalsan.tst.tomcat.embedded.gwt-1.0-SNAPSHOT-jar-with-dependencies.jar
